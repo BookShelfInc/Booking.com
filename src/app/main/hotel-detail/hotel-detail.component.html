@@ -1,0 +1,31 @@
+<div>
+  <div class="post-container" *ngIf="hotel" fxLayoutAlign="space-around" fxFlex="76" fxFlexOffset="12" style="margin-bottom:5px;">
+    <mat-card>
+      <mat-card-header>
+        <img mat-card-avatar src="{{ hotel.imageUrl }}">
+        <mat-card-title>{{ hotel.name }}</mat-card-title>
+        <mat-card-subtitle>{{ hotel.city }}, {{ hotel.country }}</mat-card-subtitle>
+      </mat-card-header>
+      <img mat-card-image src="{{ hotel.imageUrl }}">
+      <mat-card-content>
+        <p>{{ hotel.description }}</p>
+        <p>{{ hotel.address }}</p>
+        <p>{{ hotel.city }}</p>
+        <p>{{ hotel.country }}</p>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  </div>
+  
+  <div *ngIf="hotel">
+      <h3>Reviews:</h3>
+      <app-review [hotelInput]="hotelId"></app-review>
+  </div>
+
+  <div>
+    <div class="post-container" *ngIf="hotel" fxLayoutAlign="space-around" fxFlex="76" fxFlexOffset="12" style="margin-bottom:5px;">
+      <agm-map [latitude]="latitude" [longitude]="longitude">
+        <agm-marker [latitude]="latitude" [longitude]="longitude"></agm-marker>
+      </agm-map>
+    </div>
+  </div>

@@ -1,0 +1,10 @@
+<header>
+  <nav>
+  <mat-toolbar color="primary">
+      <button mat-button [routerLink]="['/']">Home</button>
+      <button mat-button *ngIf="user" >Profile</button>
+
+      <button mat-button *ngIf="user">I am {{ user.name }}</button>
+  </mat-toolbar>
+  </nav>
+</header>

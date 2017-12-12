@@ -1,0 +1,21 @@
+<div *ngIf="hotels">
+  <h1>Hotels</h1>
+  <div class="post-container">
+      <div *ngFor="let hotel of hotels" fxLayoutAlign="space-around" fxFlex="24" fxFlexOffset="7" style="margin-bottom:5px;">
+        <mat-card>
+          <mat-card-header>
+            <img mat-card-avatar src="{{ hotel.imageUrl }}">
+            <mat-card-title>{{ hotel.name }}</mat-card-title>
+            <mat-card-subtitle>{{ hotel.city }}, {{ hotel.country }}</mat-card-subtitle>
+          </mat-card-header>
+          <img mat-card-image src="{{ hotel.imageUrl }}">
+          <mat-card-content>
+            {{ hotel.description }}
+          </mat-card-content>
+          <mat-card-actions>
+            <button mat-raised-button color="primary" [routerLink]="['/info', hotel.id]">Full Info...</button>
+          </mat-card-actions>
+        </mat-card>
+      </div>
+    </div>
+  </div>
